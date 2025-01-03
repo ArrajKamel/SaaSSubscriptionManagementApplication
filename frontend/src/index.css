@@ -1,0 +1,21 @@
+:root {
+  --primary-bg: #1f1b2c;
+  --secondary-bg: #252035;
+  --text-color: #e0e0e0;
+  --input-bg: #333048;
+  --input-border: #555;
+  --button-bg: #4caf50;
+  --button-hover: #45a049;
+  --card-shadow: rgba(0, 0, 0, 0.6);
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--primary-bg);
+  color: var(--text-color);
+}
+
+.app-wrapper {
+  padding-top: 5rem; /* Space for navbar */
+}

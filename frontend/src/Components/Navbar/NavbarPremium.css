@@ -1,0 +1,120 @@
+.navbar-premium {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 97%;
+    z-index: 1000;
+    background: var(--secondary-bg-premium);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  
+    /* Add gradient border with glowing premium effect */
+    border: 2px solid transparent;
+    background-image: linear-gradient(var(--secondary-bg-premium), var(--secondary-bg-premium)),
+      linear-gradient(90deg, #f39c12, #e67e22, #f39c12);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  
+    /* Apply glowing animation */
+    animation: glowing-premium-border 5s infinite;
+  }
+  
+  .navbar-premium-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: text-premium-glow 3s ease-in-out infinite;
+  }
+  
+  .navbar-premium-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-premium-link {
+    text-decoration: none;
+    color: var(--text-color-premium);
+    font-size: 1rem;
+    transition: color 0.3s, text-shadow 0.3s;
+  
+    /* Add hover effects with brightness */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+  
+  .navbar-premium-link:hover {
+    color: var(--button-bg-premium);
+    text-shadow: 0 0 10px var(--button-bg-premium), 0 0 20px var(--button-bg-premium);
+  }
+  
+  .navbar-premium-link-button {
+    background: linear-gradient(90deg, #f39c12, #e67e22); /* Gradient for premium */
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .navbar-premium-link-button:hover {
+    transform: scale(1.1); /* Slight enlargement on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .navbar-premium-link-button:focus {
+    outline: none;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Keyframes for glowing premium border animation */
+  @keyframes glowing-premium-border {
+    0% {
+      background-image: linear-gradient(var(--secondary-bg-premium), var(--secondary-bg-premium)),
+        linear-gradient(90deg, #f39c12, #e67e22, #f39c12);
+    }
+    50% {
+      background-image: linear-gradient(var(--secondary-bg-premium), var(--secondary-bg-premium)),
+        linear-gradient(90deg, #e67e22, #f39c12, #e67e22);
+    }
+    100% {
+      background-image: linear-gradient(var(--secondary-bg-premium), var(--secondary-bg-premium)),
+        linear-gradient(90deg, #f39c12, #e67e22, #f39c12);
+    }
+  }
+  
+  /* Keyframes for glowing premium text animation */
+  @keyframes text-premium-glow {
+    0% {
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    }
+    100% {
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+  }
+  
+
+  .navbar-premium-brand .navbar-brand-link {
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  
+  .navbar-premium-brand .navbar-brand-link:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+  

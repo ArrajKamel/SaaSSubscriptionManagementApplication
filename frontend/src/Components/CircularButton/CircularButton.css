@@ -1,0 +1,44 @@
+.circular-button {
+    position: fixed;
+    bottom: 20px; /* Adjust as needed for placement */
+    right: 20px;  /* Adjust as needed for placement */
+    width: 60px; /* Size of the button */
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--button-bg); /* Matches the theme */
+    color: white;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 60px; /* Vertically centers the text */
+    box-shadow: 0 0 10px var(--button-bg), 0 0 20px var(--button-bg), 0 0 30px var(--button-bg);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.4s ease-in-out;
+  }
+  
+  .circular-button:hover {
+    transform: scale(1.1); /* Slightly enlarges the button on hover */
+    box-shadow: 0 0 20px var(--button-bg), 0 0 40px var(--button-bg), 0 0 60px var(--button-bg);
+  }
+  
+  .circular-button:focus {
+    outline: none; /* Removes default focus outline */
+  }
+  
+  @keyframes glowing {
+    0% {
+      box-shadow: 0 0 10px var(--button-bg), 0 0 20px var(--button-bg), 0 0 30px var(--button-bg);
+    }
+    50% {
+      box-shadow: 0 0 20px var(--button-hover), 0 0 40px var(--button-hover), 0 0 60px var(--button-hover);
+    }
+    100% {
+      box-shadow: 0 0 10px var(--button-bg), 0 0 20px var(--button-bg), 0 0 30px var(--button-bg);
+    }
+  }
+  
+  .circular-button {
+    animation: glowing 2s infinite; /* Add the glowing animation */
+  }
+  

@@ -1,0 +1,56 @@
+.plan-card {
+  width: 300px;
+  padding: 1.5rem;
+  margin: 1rem;
+  border-radius: 12px;
+  background-color: var(--secondary-bg);
+  color: var(--text-color);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  cursor: pointer;
+}
+
+.plan-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.plan-title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.plan-cost {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--button-bg);
+  margin-bottom: 1rem;
+}
+
+.plan-features {
+  list-style: none;
+  padding: 0;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.plan-feature {
+  margin-bottom: 0.5rem;
+}
+
+/* Free Plan Styling */
+.free-card {
+  border: 2px solid var(--input-border);
+}
+
+/* Premium Plan Styling */
+.premium-card {
+  border: 2px solid var(--button-bg);
+  background: linear-gradient(90deg, #f39c12, #e67e22);
+  color: white;
+}
+
+.premium-card .plan-cost {
+  color: white;
+}

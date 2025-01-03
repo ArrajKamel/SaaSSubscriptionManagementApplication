@@ -1,0 +1,114 @@
+.login-card {
+  background-color: var(--secondary-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px var(--card-shadow);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.login-subtitle {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #aaa;
+}
+
+.login-form .form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 8px;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--button-bg);
+}
+
+.login-button {
+  background-color: var(--button-bg);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: var(--button-hover);
+}
+
+.login-help {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.login-help a {
+  color: var(--button-bg);
+  text-decoration: none;
+}
+
+.login-help a:hover {
+  text-decoration: underline;
+}
+
+.signup-button {
+  background-color: transparent;
+  color: var(--button-bg);
+  border: 1px solid var(--button-bg);
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 1rem; /* Adds space between buttons */
+}
+
+.signup-button:hover {
+  background-color: var(--button-bg);
+  color: white;
+}
+
+
+.signup-message {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: #aaa;
+  text-align: center;
+}
+
+.signup-link {
+  color: var(--button-bg);
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.signup-link:hover {
+  color: var(--button-hover);
+  text-decoration: underline;
+}
+

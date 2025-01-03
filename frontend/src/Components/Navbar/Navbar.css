@@ -1,0 +1,49 @@
+.navbar {
+  position: fixed;
+  width: 97%; /* Ensures the navbar spans the full width of the screen */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--secondary-bg);
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 6px var(--card-shadow);
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.navbar-link:hover {
+  color: var(--button-bg);
+}
+
+
+.navbar-brand-link {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit color from the parent container */
+  font-size: inherit; /* Match the brand's font size */
+  font-weight: inherit; /* Match the brand's font weight */
+  cursor: pointer; /* Add pointer cursor for interactivity */
+}
+
+.navbar-brand-link:hover {
+  text-decoration: none; /* Ensure no underline on hover */
+  color: inherit; /* Keep the same color on hover */
+}
