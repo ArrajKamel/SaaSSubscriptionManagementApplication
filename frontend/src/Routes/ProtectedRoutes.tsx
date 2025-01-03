@@ -4,7 +4,7 @@ import { useAuth } from "../Context/useAuth";
 
 type Props = { children: React.ReactNode };
 
-const ProtectedRoute = ({ children }: Props) => {
+export const ProtectedRoute = ({ children }: Props) => {
   const location = useLocation();
   const { isLoggedIn } = useAuth();
   return isLoggedIn() ? (
@@ -14,4 +14,17 @@ const ProtectedRoute = ({ children }: Props) => {
   );
 };
 
-export default ProtectedRoute;
+export const ProtectedPremiumRoute = ({ children }: Props) => {
+  const location = useLocation();
+  const { isPremium, isLoggedIn } = useAuth();
+
+  return isLoggedIn() ? (
+      isPremium() ? (
+        <>{children}</>
+      ):(
+        <Navigate to="/premiumPlan" state={{ from: location }} replace />
+      )
+    ):(
+      <Navigate to="/login" state={{ from: location }} replace />
+    )
+};

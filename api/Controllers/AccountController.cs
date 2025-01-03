@@ -38,7 +38,8 @@ namespace api.Controllers
                 var appUser = new AppUser
                 {
                     UserName = registerDto.UserName,
-                    Email = registerDto.EmailAddress
+                    Email = registerDto.EmailAddress,
+                    IsPremium = false
                 };
                 var createdUser = await _userManager.CreateAsync(appUser, registerDto.Password);
 
@@ -51,6 +52,7 @@ namespace api.Controllers
                             {
                                 UserName = registerDto.UserName, 
                                 Email = registerDto.EmailAddress,
+                                IsPremium = appUser.IsPremium,
                                 Token = _tokenService.CreateToken(appUser)
                             }
                         );

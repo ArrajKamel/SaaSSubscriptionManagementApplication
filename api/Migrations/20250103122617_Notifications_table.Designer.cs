@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using api.Data;
@@ -11,9 +12,11 @@ using api.Data;
 namespace api.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20250103122617_Notifications_table")]
+    partial class Notifications_table
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,13 +53,13 @@ namespace api.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "ccc80dec-3c51-4f89-ba92-036a67a155f6",
+                            Id = "028b4bb1-4580-4778-addf-1670f867f39d",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "69c4e922-7cb9-4e74-a919-ec763d4bb0c8",
+                            Id = "0694f308-96a2-462c-9225-94e5a3ca2e0a",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -240,11 +243,11 @@ namespace api.Migrations
 
             modelBuilder.Entity("api.Models.Notification", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("NotificationID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("NotificationID"));
 
                     b.Property<string>("AppUserId")
                         .IsRequired()
@@ -260,7 +263,7 @@ namespace api.Migrations
                     b.Property<DateTime>("SentAt")
                         .HasColumnType("timestamp with time zone");
 
-                    b.HasKey("Id");
+                    b.HasKey("NotificationID");
 
                     b.HasIndex("AppUserId");
 

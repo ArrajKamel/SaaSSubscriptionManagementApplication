@@ -39,7 +39,7 @@ export const UserProvider = ({children}: Props) => {
     }, [])
 
     const registerUser = async (email:string, username:string, password: string) => {
-        await registerAPI(email,username, password).then((response) => {
+        await registerAPI(email, username, password).then((response) => {
             if(response) {
                 localStorage.setItem("token", response?.data.token);
                 const userObj =  {
@@ -52,7 +52,6 @@ export const UserProvider = ({children}: Props) => {
                 setIsPremiumState(false);
                 toast.success("login success!");
                 navigate("/");
-
             }
         })
         .catch((e) => toast.warning("server error occoured!"));

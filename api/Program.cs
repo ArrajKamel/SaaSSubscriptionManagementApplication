@@ -2,6 +2,7 @@ using System.ComponentModel;
 using api.Data;
 using api.Interfaces;
 using api.Models;
+using api.Repository;
 using api.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -89,8 +90,9 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-builder.Services.AddScoped<ITokenService, TokenService>(); // dependency injection
-
+// dependency injection
+builder.Services.AddScoped<ITokenService, TokenService>(); 
+builder.Services.AddScoped<ISubscriptionRepository, SubscriptionRepository>();
 
 var app = builder.Build();
 
