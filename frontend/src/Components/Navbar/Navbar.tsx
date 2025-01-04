@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import './NavbarPremium.css';
 import { useAuth } from '../../Context/useAuth';
+import { json } from 'stream/consumers';
 
 const NavBar: React.FC = () => {
-  const { isLoggedIn, user, logout, isPremium } = useAuth();
+  const { isLoggedIn, user, logout } = useAuth();
+  const [premiumUI, setPremiumUI] = useState(false);
+
+  useEffect(() => {
+    const userUnparced = localStorage.getItem("user");
+
+    setPremiumUI(userUnparced !== null ? JSON.parse(userUnparced).isPremium : false)
+  }, [localStorage.getItem("user")])
 
   const commonLinks = (
     <>
@@ -19,7 +27,7 @@ const NavBar: React.FC = () => {
       {commonLinks}
       <li><Link to="/" className="navbar-link" onClick={logout}>Logout</Link></li>
       <li><Link to="sub" className="navbar-link">Sub Page</Link></li>
-      {!isPremium() && (
+      {!premiumUI && (
         <li><Link to="/premiumPlan" className="navbar-link">Get Premium</Link></li>
       )}
     </>
@@ -32,13 +40,13 @@ const NavBar: React.FC = () => {
   );
 
   return (
-    <nav className={isPremium() ? 'navbar-premium' : 'navbar'}>
-      <div className={isPremium() ? 'navbar-premium-brand' : 'navbar-brand'}>
+    <nav className={premiumUI ? 'navbar-premium' : 'navbar'}>
+      <div className={premiumUI ? 'navbar-premium-brand' : 'navbar-brand'}>
         <Link to={'/'} className="navbar-brand-link" >Subscription Management Application</Link>
       </div>
-      <ul className={isPremium() ? 'navbar-premium-links' : 'navbar-links'}>
+      <ul className={premiumUI ? 'navbar-premium-links' : 'navbar-links'}>
         {authLinks}
-        {isPremium() && (
+        {premiumUI && (
           <li>
             <Link to="/premium" className="navbar-premium-link-button">
               Premium
