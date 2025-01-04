@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Children } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import { useAuth } from "../Context/useAuth";
 
@@ -14,7 +14,7 @@ export const ProtectedRoute = ({ children }: Props) => {
   );
 };
 
-export const ProtectedPremiumRoute = ({ children }: Props) => {
+export const ProtectedPremium = ({ children }: Props) => {
   const location = useLocation();
   const { isPremium, isLoggedIn } = useAuth();
 
@@ -28,3 +28,13 @@ export const ProtectedPremiumRoute = ({ children }: Props) => {
       <Navigate to="/login" state={{ from: location }} replace />
     )
 };
+
+export const ProtectedAuth = ({ children }: Props) => {
+  const location = useLocation();
+  const { isLoggedIn } = useAuth();
+  return isLoggedIn() ? (
+    <Navigate to="/sub" state={{ from: location }} replace />
+  ) : (
+    <>{children}</>
+  );
+}

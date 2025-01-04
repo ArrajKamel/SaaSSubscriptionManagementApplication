@@ -1,6 +1,7 @@
 .navbar {
   position: fixed;
   width: 97%; /* Ensures the navbar spans the full width of the screen */
+  height: 60px; /* Consistent height for alignment */
   display: flex;
   justify-content: space-between;
   align-items: center;

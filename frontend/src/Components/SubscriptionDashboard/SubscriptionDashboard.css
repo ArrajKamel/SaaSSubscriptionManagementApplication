@@ -1,0 +1,39 @@
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 1.5rem;
+  padding: 1rem;
+  margin-left: 300px; /* Shift dashboard to the right of the sidebar */
+  justify-content: center; /* Center the grid within its available space */
+}
+
+.subscription-card {
+  background-color: var(--secondary-bg); /* Improved background color */
+  color: var(--text-color);
+  width: 300px;
+  padding: 1.5rem;
+  border-radius: 15px; /* Rounded corners for a modern look */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.subscription-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.card-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--button-bg); /* Bright color for service name */
+  margin-bottom: 1rem;
+}
+
+.card-cost {
+  font-size: 1.2rem;
+  color: var(--text-color);
+}

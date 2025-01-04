@@ -1,0 +1,11 @@
+.subscription-page {
+    display: flex;
+    height: 100vh;
+    background-color: var(--primary-bg);
+  }
+  .dashboard-container {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+  }
+  
