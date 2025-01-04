@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using api.DTOs.Account;
+using api.Extensions;
 using api.Interfaces;
 using api.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -34,6 +35,13 @@ namespace api.Controllers
             try{
                 if(!ModelState.IsValid)
                     return BadRequest(ModelState);
+
+                if(
+                    registerDto.Password == null || 
+                    registerDto.UserName == null||
+                    registerDto.EmailAddress == null
+                )
+                    return BadRequest("one or more properties are missed from the registeratoin info!!");
             
                 var appUser = new AppUser
                 {
@@ -41,6 +49,8 @@ namespace api.Controllers
                     Email = registerDto.EmailAddress,
                     IsPremium = false
                 };
+                if(registerDto.Password == null)
+                    return BadRequest("enter a password");
                 var createdUser = await _userManager.CreateAsync(appUser, registerDto.Password);
 
                 if(createdUser.Succeeded)
@@ -73,6 +83,13 @@ namespace api.Controllers
         {
             if(!ModelState.IsValid)
                 return BadRequest(ModelState);
+
+            if(
+                loginDto.Password == null || 
+                loginDto.UserName == null
+            )
+                return BadRequest("one or more properties are missed from the login info!!");
+            
             
             var user = await _userManager.Users.FirstOrDefaultAsync(x => x.UserName.ToLower() == loginDto.UserName.ToLower());
 
@@ -136,7 +153,7 @@ namespace api.Controllers
         }
 
 
-        [HttpPatch]
+        [HttpPatch("set-premium")]
         [Authorize]
         public async Task<IActionResult> SetPremium()
         {
@@ -168,6 +185,36 @@ namespace api.Controllers
             }
         }
 
-     
+        [HttpPatch("cancel-premium")]
+        [Authorize]
+        public async Task<IActionResult> CancelPremium()
+        {
+            try
+            {
+                var user = await _userManager.GetUserAsync(User);
+
+                if (user == null)
+                {
+                    return NotFound(new { message = "User not found." });
+                }
+
+                user.IsPremium = false;
+
+                var result = await _userManager.UpdateAsync(user);
+
+                if (result.Succeeded)
+                {
+                    return Ok(new { message = "User successfully set to Premium.", user = new { user.UserName, user.IsPremium } });
+                }
+                else
+                {
+                    return StatusCode(500, new { errors = result.Errors.Select(e => e.Description).ToList() });
+                }
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, new { message = "An error occurred while updating the user.", error = e.Message });
+            }
+        }
     }
 }

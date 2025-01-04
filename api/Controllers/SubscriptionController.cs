@@ -73,9 +73,14 @@ namespace api.Controllers
         
             var subscriptionModle = subscriptionDto.SubscriptionCreateDtoToSubscription();
             subscriptionModle.AppUserId = appUser.Id; 
+            
             var creationStatus = await _subRepo.CreateAsync(subscriptionModle);
-            // if(creationStatus == null)
-            //     return StatusCode(409, subscriptionDto.ServiceName +" already existed!");
+
+            subscriptionModle.Id = creationStatus.Id; 
+            
+            if(creationStatus == null)
+                return StatusCode(409, subscriptionDto.ServiceName +" already existed!");
+
             return CreatedAtAction(nameof(GetById), new { id = subscriptionModle }, subscriptionModle.ToSubscriptionDto());
         }
 

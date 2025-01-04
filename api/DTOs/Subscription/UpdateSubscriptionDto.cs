@@ -22,6 +22,6 @@ namespace api.DTOs.Subscription
         public string BillingFrequency { get; set; } = string.Empty; // e.g., Monthly, Yearly
         [Required]
         // [FutureDateValidation(ErrorMessage = "NextBillingDate must be a future date")]
-        public string NextBillingDate { get; set; }
+        public string? NextBillingDate { get; set; }
     }
 }
