@@ -10,7 +10,6 @@ const NavBar: React.FC = () => {
   const commonLinks = (
     <>
       <li><Link to="/" className="navbar-link">Home</Link></li>
-      <li><Link to="sub" className="navbar-link">Sub Page</Link></li>
     </>
   );
 
@@ -19,6 +18,7 @@ const NavBar: React.FC = () => {
       <li><a className="navbar-welcome">Welcome {user?.userName}</a></li>
       {commonLinks}
       <li><Link to="/" className="navbar-link" onClick={logout}>Logout</Link></li>
+      <li><Link to="sub" className="navbar-link">Sub Page</Link></li>
       {!isPremium() && (
         <li><Link to="/premiumPlan" className="navbar-link">Get Premium</Link></li>
       )}

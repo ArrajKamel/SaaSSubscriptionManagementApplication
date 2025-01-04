@@ -50,7 +50,7 @@ export const UserProvider = ({children}: Props) => {
                 setToken(response?.data.token);
                 setUser(userObj!);
                 setIsPremiumState(false);
-                toast.success("login success!");
+                toast.success("sign up success!");
                 navigate("/");
             }
         })

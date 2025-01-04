@@ -12,7 +12,7 @@ namespace api.DTOs.Subscription
         public string ServiceName { get; set; } = string.Empty;
         public decimal Cost { get; set; }
         public string BillingFrequency { get; set; } = string.Empty; // e.g., Monthly, Yearly
-        public DateTime NextBillingDate { get; set; }
+        public string NextBillingDate { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }
 }

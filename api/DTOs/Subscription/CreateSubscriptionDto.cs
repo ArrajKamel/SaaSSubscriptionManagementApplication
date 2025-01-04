@@ -23,8 +23,8 @@ namespace api.DTOs.Subscription
 
         public string BillingFrequency { get; set; } = string.Empty; // e.g., Monthly, Yearly
         [Required]
-        [FutureDateValidation(ErrorMessage = "NextBillingDate must be a future date")]
-        public DateTime NextBillingDate { get; set; }
+        // [FutureDateValidation(ErrorMessage = "NextBillingDate must be a future date")]
+        public string NextBillingDate { get; set; }
     }
 
     // Custom Validation Attribute for BillingFrequency
@@ -43,16 +43,16 @@ namespace api.DTOs.Subscription
     }
 
     // Custom Validation Attribute for NextBillingDate
-    public class FutureDateValidation : ValidationAttribute
-    {
-        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
-        {
-            if (value is DateTime date && date > DateTime.UtcNow)
-            {
-                return ValidationResult.Success!;
-            }
+    // public class FutureDateValidation : ValidationAttribute
+    // {
+    //     protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+    //     {
+    //         if (value is DateTime date && date > DateTime.UtcNow)
+    //         {
+    //             return ValidationResult.Success!;
+    //         }
 
-            return new ValidationResult("Next Billing Date must be a future date");
-        }
-    }
+    //         return new ValidationResult("Next Billing Date must be a future date");
+    //     }
+    // }
 }

@@ -20,8 +20,16 @@ namespace api.Repository
         }
 
         
-        public async Task<Subscription> CreateAsync(Subscription subscriptionModel)
+        public async Task<Subscription?> CreateAsync(Subscription subscriptionModel)
         {
+            // //check if the subscription is alrady exited 
+            // var check = await _context.subscriptions.FirstOrDefaultAsync(s => 
+            //     s.ServiceName.ToLower() == subscriptionModel.ServiceName.ToLower()
+            //     && s.AppUserId == subscriptionModel.AppUserId);
+
+            // if(check != null)
+            //     return null;
+
             await _context.subscriptions.AddAsync(subscriptionModel);
             await _context.SaveChangesAsync();
             return subscriptionModel;

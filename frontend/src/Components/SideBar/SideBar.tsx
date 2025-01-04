@@ -11,6 +11,9 @@ const Sidebar: React.FC<SidebarProps> = ({ setActiveView }) => {
       <button className="sidebar-button" onClick={() => setActiveView('subscriptions')}>
         My Subscriptions
       </button>
+      <button className="sidebar-button" onClick={() => setActiveView('new-sub')}>
+        + New Subscription
+      </button>
       <button className="sidebar-button" onClick={() => setActiveView('analysis')}>
         Analysis
       </button>

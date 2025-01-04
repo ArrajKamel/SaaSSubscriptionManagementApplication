@@ -8,13 +8,23 @@ const SubscriptionDashboard: React.FC = () => {
   const [subscriptions, setSubscriptions] = useState<SubscriptionGet[]>([]);
   const [selectedSubscription, setSelectedSubscription] = useState<SubscriptionGet | null>(null);
 
-  useEffect(() => {
-    const fetchSubscriptions = async () => {
-      const fetchedSubscriptions = await subscriptionGetAPI();
-      if (fetchedSubscriptions) {
-        setSubscriptions(fetchedSubscriptions);
+  const fetchSubscriptions = async () => {
+    try {
+      const response = await subscriptionGetAPI();
+      if (response) {
+        setSubscriptions(response);
       }
-    };
+    } catch (error) {
+      console.error("Failed to fetch subscriptions:", error);
+    }
+  };
+
+  const handleDeleteSuccess = () => {
+    fetchSubscriptions();
+    setSelectedSubscription(null);
+  };
+
+  useEffect(() => {
     fetchSubscriptions();
   }, []);
 
@@ -34,6 +44,7 @@ const SubscriptionDashboard: React.FC = () => {
         <SubscriptionModal
           subscription={selectedSubscription}
           onClose={() => setSelectedSubscription(null)}
+          onDeleteSuccess={handleDeleteSuccess}
         />
       )}
     </div>

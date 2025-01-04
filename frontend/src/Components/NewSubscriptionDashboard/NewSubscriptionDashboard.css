@@ -1,0 +1,73 @@
+.new-subscription-dashboard {
+    margin-left: 300px; /* Offset to account for the sidebar */
+    padding: 2rem;
+    color: var(--text-color);
+  }
+  
+  .new-subscription-dashboard h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--button-bg); /* Bright accent color */
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  label {
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--text-color);
+  }
+  
+  input, select {
+    padding: 1rem;
+    font-size: 1rem;
+    border: 2px solid var(--button-bg);
+    border-radius: 12px;
+    background-color: var(--secondary-bg);
+    color: var(--text-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  input:focus, select:focus {
+    outline: none;
+    border-color: var(--button-hover); /* Brighter accent color on focus */
+    box-shadow: 0 0 15px var(--button-hover);
+  }
+  
+  input:hover, select:hover {
+    box-shadow: 0 0 15px var(--button-bg);
+  }
+  
+  .submit-button {
+    padding: 1rem 2rem;
+    background-color: var(--button-bg);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .submit-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5), 0 0 15px var(--button-bg);
+  }
+  
+  .submit-button:focus {
+    outline: none;
+    box-shadow: 0 8px 20px var(--button-hover);
+  }
+  

@@ -1,4 +1,5 @@
 .dashboard {
+  position: relative; /* Required to position the button absolutely within the dashboard */
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
   gap: 1.5rem;
@@ -36,4 +37,30 @@
 .card-cost {
   font-size: 1.2rem;
   color: var(--text-color);
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.new-button {
+  position: absolute; /* Position the button relative to the dashboard */
+  top: 10px; /* Adjust the vertical position */
+  right: 10px; /* Adjust the horizontal position */
+  background-color: var(--button-bg);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.new-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

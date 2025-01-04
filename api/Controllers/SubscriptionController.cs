@@ -73,7 +73,9 @@ namespace api.Controllers
         
             var subscriptionModle = subscriptionDto.SubscriptionCreateDtoToSubscription();
             subscriptionModle.AppUserId = appUser.Id; 
-            await _subRepo.CreateAsync(subscriptionModle);
+            var creationStatus = await _subRepo.CreateAsync(subscriptionModle);
+            // if(creationStatus == null)
+            //     return StatusCode(409, subscriptionDto.ServiceName +" already existed!");
             return CreatedAtAction(nameof(GetById), new { id = subscriptionModle }, subscriptionModle.ToSubscriptionDto());
         }
 
@@ -97,7 +99,7 @@ namespace api.Controllers
 
         [HttpDelete]
         [Authorize]
-        public async Task<IActionResult> Delete([FromBody] int subscriptionId)
+        public async Task<IActionResult> Delete(int subscriptionId)
         {
             if(!ModelState.IsValid)
                 return BadRequest(ModelState);

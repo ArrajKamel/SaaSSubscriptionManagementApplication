@@ -26,7 +26,7 @@ namespace api.Models
         public string BillingFrequency { get; set; } = string.Empty; // e.g., Monthly, Yearly
 
         [Required]
-        public DateTime NextBillingDate { get; set; }
+        public string NextBillingDate { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public string AppUserId { get; set; }

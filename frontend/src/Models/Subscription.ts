@@ -1,4 +1,4 @@
-export type SubscriptionPostAndPut = {
+export type SubscriptionPost = {
     serviceName: string, 
     cost: number,
     billingFrequency: string,
