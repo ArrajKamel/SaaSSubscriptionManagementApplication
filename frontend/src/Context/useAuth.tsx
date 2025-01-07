@@ -54,7 +54,7 @@ export const UserProvider = ({children}: Props) => {
                 navigate("/");
             }
         })
-        .catch((e) => toast.warning("server error occoured!"));
+        .catch(() => toast.warning("server error occoured!"));
     };
 
     const loginUser = async (username:string, password: string) => {
@@ -75,7 +75,7 @@ export const UserProvider = ({children}: Props) => {
 
             }
         })
-        .catch((e) => toast.warning("server error occoured!"));
+        .catch(() => toast.warning("server error occoured!"));
     };
 
     const isLoggedIn = () => {

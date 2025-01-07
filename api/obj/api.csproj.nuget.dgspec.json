@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/kamelarraj/Desktop/sma2/api/api.csproj": {}
+    "/Users/kamelarraj/Desktop/UNI/thirdYear/firstSem/SoftwareEngineering(SE)/Project/SMA/api/api.csproj": {}
   },
   "projects": {
-    "/Users/kamelarraj/Desktop/sma2/api/api.csproj": {
+    "/Users/kamelarraj/Desktop/UNI/thirdYear/firstSem/SoftwareEngineering(SE)/Project/SMA/api/api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/kamelarraj/Desktop/sma2/api/api.csproj",
+        "projectUniqueName": "/Users/kamelarraj/Desktop/UNI/thirdYear/firstSem/SoftwareEngineering(SE)/Project/SMA/api/api.csproj",
         "projectName": "api",
-        "projectPath": "/Users/kamelarraj/Desktop/sma2/api/api.csproj",
+        "projectPath": "/Users/kamelarraj/Desktop/UNI/thirdYear/firstSem/SoftwareEngineering(SE)/Project/SMA/api/api.csproj",
         "packagesPath": "/Users/kamelarraj/.nuget/packages/",
-        "outputPath": "/Users/kamelarraj/Desktop/sma2/api/obj/",
+        "outputPath": "/Users/kamelarraj/Desktop/UNI/thirdYear/firstSem/SoftwareEngineering(SE)/Project/SMA/api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/kamelarraj/.nuget/NuGet/NuGet.Config"
