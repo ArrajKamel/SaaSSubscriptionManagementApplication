@@ -44,17 +44,18 @@ The SaaS Subscription Management application is a modern solution designed to he
 ## **Setup Instructions**
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/saas-subscription-management.git
+   git clone https://github.com/ArrajKamel/SubscriptionManager.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd saas-subscription-management
+   cd SubscriptionManager
    ```
 3. Set up the backend:
    - Install .NET Core dependencies.
    - Configure PostgreSQL connection string in `appsettings.json`.
    - Run migrations and start the server.
    ```bash
+   cd api
    dotnet ef database update
    dotnet run
    ```
@@ -86,8 +87,6 @@ The SaaS Subscription Management application is a modern solution designed to he
   - `POST /api/subscriptions`: Add a new subscription.
   - `GET /api/subscriptions`: Get all subscriptions.
 
-- **Analytics:**
-  - `GET /api/analytics/summary`: Get expense summary.
 
 ## **Contributing**
 1. Fork the repository.
