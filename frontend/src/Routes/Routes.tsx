@@ -17,7 +17,7 @@ export const router = createBrowserRouter([
             { path: "login"      , element: <ProtectedAuth>    <LoginPage />       </ProtectedAuth> },
             { path: "register"   , element: <ProtectedAuth>    <RegisterPage />    </ProtectedAuth> },
             { path: "sub"        , element: <ProtectedRoute>   <SubPage />         </ProtectedRoute> },
-            { path: "premium"    , element: <ProtectedPremium> <PremiumPage />     </ProtectedPremium> },
+            { path: "premium"    , element: <ProtectedRoute>    <PremiumPage />     </ProtectedRoute> },
             { path: "premiumPlan", element: <ProtectedRoute>   <PremiumPlanPage /> </ProtectedRoute>}
         ]
     }

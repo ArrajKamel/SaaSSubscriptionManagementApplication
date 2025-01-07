@@ -1,0 +1,56 @@
+/* Container styling */
+.premium-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    /* background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); */
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Neon "COMING SOON" text with horizontal light effect */
+.neon-coming-soon {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #00ff00; /* Bright neon green */
+    text-shadow: 
+        -20px 0 40px #00ff00, 
+        20px 0 40px #00ff00, 
+        -40px 0 80px #00ff00, 
+        40px 0 80px #00ff00, 
+        -60px 0 120px #00ff00, 
+        60px 0 120px #00ff00; /* Horizontal glowing effect */
+    animation: neon-horizontal-flow 2s infinite alternate; /* Horizontal flow animation */
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    margin-bottom: 2rem;
+}
+
+/* Horizontal Flicker Animation */
+@keyframes neon-horizontal-flow {
+    0% {
+        text-shadow: 
+            -10px 0 20px #00ff00, 
+            10px 0 20px #00ff00, 
+            -30px 0 40px #00ff00, 
+            30px 0 40px #00ff00;
+    }
+    50% {
+        text-shadow: 
+            -20px 0 40px #00ff00, 
+            20px 0 40px #00ff00, 
+            -40px 0 80px #00ff00, 
+            40px 0 80px #00ff00;
+    }
+    100% {
+        text-shadow: 
+            -10px 0 20px #00ff00, 
+            10px 0 20px #00ff00, 
+            -20px 0 40px #00ff00, 
+            20px 0 40px #00ff00;
+    }
+}

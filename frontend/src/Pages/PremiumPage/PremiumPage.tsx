@@ -1,18 +1,18 @@
-import React from 'react'
+import React from 'react';
 import CircularButton from '../../Components/CircularButton/CircularButton';
+import './PremiumPage.css';
 
-type Props = {}
+type Props = {};
 
-const subPage = (props: Props) => {
-    const onClink = () => console.log("form premium page, cancel button");
+const PremiumPage = (props: Props) => {
+    const onClick = () => console.log("Cancel button clicked from Premium Page");
 
-  return (
-    <div>this is the premium page
-        <CircularButton onClick={onClink}/>
-    </div>
+    return (
+        <div className="premium-page">
+            <h1 className="neon-coming-soon">COMING SOON</h1>
+            <CircularButton onClick={onClick} />
+        </div>
+    );
+};
 
-
-  )
-}
-
-export default subPage
+export default PremiumPage;

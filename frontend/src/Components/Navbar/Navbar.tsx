@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './Navbar.css';
 import './NavbarPremium.css';
 import { useAuth } from '../../Context/useAuth';
-import { json } from 'stream/consumers';
 
 const NavBar: React.FC = () => {
   const { isLoggedIn, user, logout } = useAuth();
